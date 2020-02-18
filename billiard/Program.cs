@@ -12,12 +12,28 @@ namespace billiard
         {
             List<int> golyók = new List<int>();
             Kezdés(golyók);
-            for (int i = 0; i < golyók.Count; i++)
-            {
-                Console.WriteLine(golyók[i]);
-            }
-            Console.ReadKey();
+            int leeső=LeesőSoroló(golyók);
+            Kiíró(golyók);
+            
         }
+
+        static void Kiíró(List<int> golyók)
+        {
+            foreach (int item in golyók)
+            {
+                Console.WriteLine($"{item}");
+            }
+        }
+
+        static int LeesőSoroló(List<int> golyók)
+        {
+            Random gép = new Random();
+            int szám= gép.Next(golyók.Count);
+            golyók.Remove(szám);
+            return golyók[szám];
+        }
+        
+        
 
         static void Kezdés(List<int> golyók)
         {
