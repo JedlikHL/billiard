@@ -10,6 +10,7 @@ namespace billiard
     {
         static void Main(string[] args)
         {
+            Console.ReadKey();
         }
     }
 }
